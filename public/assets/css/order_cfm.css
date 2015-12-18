@@ -1,0 +1,127 @@
+body
+{
+  width: 1000px;
+  height: 900px;
+  margin: auto;
+}
+.header
+{
+  width: 990px;
+  height: 90px;
+  padding: 5px;
+}
+.title
+{
+  width: 650px;
+  height: 70px;
+  padding: 10px;
+  font-size: 35px;
+  float: left;
+}
+.return
+{
+  width: 300px;
+  height: 70px;
+  padding: 10px;
+  float: left;
+}
+.top
+{
+  float: left;
+  font-size: 30px;
+}
+.top p
+{
+  padding: 5px;
+  border: 1px solid;
+}
+.back
+{
+  float: right;
+  font-size: 30px;
+}
+.back p
+{
+  padding: 5px;
+  border: 1px solid;
+}
+.content
+{
+  width: 990px;
+  height: 900px;
+  margin: auto;
+}
+.content_top
+{
+  width: 990px;
+  height: 250px;
+  margin-top: 10px;
+  border: 1px solid;
+  float: left;
+}
+.content table
+{
+  padding-top: 10px;
+  margin: auto;
+}
+#label
+{
+  float: left;
+  margin: 5px 5px;
+  font-size: 30px;
+  clear: both;
+}
+.content_top b
+{
+  float: left;
+  margin: 5px 5px;
+  font-size: 30px;
+}
+.content_top input[type="textbox"]
+{
+  float: left;
+  margin: 2px 0 0 2px;
+  font-size: 30px;
+}
+.content_center
+{
+  width: 990px;
+  height: 350px;
+  margin: 30px auto;
+  float: left;
+}
+#item_name
+{
+    width: 300px;
+}
+thead.table_head,tbody.table_scroll{
+	display: block;
+}
+tbody.table_scroll {
+	overflow-y: auto;
+	height: 300px;
+}
+.content_center td,th{
+  border-collapse: collapse;
+	text-align: center;
+	width: 200px;
+  font-size: 30px;
+}
+.content_bottom
+{
+  width: 990px;
+  height: 250px;
+  margin: auto;
+  float: left;
+}
+.content_bottom p
+{
+  float: right;
+  font-size: 30px;
+}
+.content_bottom input[type="button"]
+{
+  float: left;
+  margin: 5px 90px;
+  font-size: 40px
+}
