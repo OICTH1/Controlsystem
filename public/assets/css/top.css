@@ -15,7 +15,8 @@ body
 .frame
 {
   width: 445px;
-  height: 296px;
+  height: 256px;
+  padding-top: 40px;
   margin: auto;
   float: left;
   text-align: center;

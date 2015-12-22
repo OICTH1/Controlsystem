@@ -1,7 +1,7 @@
 body
 {
 	width: 1000px;
-	height: 1000px;
+	height: 900px;
 	margin: 0 auto;
 }
 .header
@@ -30,14 +30,14 @@ body
 .content
 {
 	width: 990px;
-	height: 890px;
+	height: 790px;
 	padding: 5px;
 	margin: 0 auto;
 }
 .content_left
 {
 	width: 480px;
-	height: 880px;
+	height: 780px;
 	padding: 5px;
 	clear: both;
 	float: left;
@@ -67,14 +67,14 @@ body
 .content_left_bottom
 {
 	width: 480px;
-	height: 608px;
+	height: 508px;
 	margin-top: 20px;
 	font-size: 30px;
 }
 .view_table table
 {
   width: 478px;
-  height: 608px;
+  height: 508px;
   padding: 5px;
 	border: 1px solid;
 }
@@ -83,7 +83,7 @@ thead.view_table_head,tbody.view_table_scroll{
 }
 .view_table_scroll {
 	overflow-y: auto;
-	height: 574px;
+	height: 474px;
 }
 .view_table_head,.view_table_scroll td,th{
   border-collapse: collapse;
@@ -93,7 +93,7 @@ thead.view_table_head,tbody.view_table_scroll{
 .content_right
 {
 	width: 480px;
-	height: 880px;
+	height: 780px;
 	padding: 5px;
 	float: left;
 }
@@ -122,7 +122,7 @@ thead.view_table_head,tbody.view_table_scroll{
 .content_right_center
 {
 	width: 478px;
-	height: 608px;
+	height: 508px;
 	margin-top: 20px;
 	border: 1px solid;
 	font-size: 30px;
@@ -142,7 +142,7 @@ thead.order_table_head,tbody.order_table_scroll{
 }
 .order_table_scroll {
 	overflow-y: auto;
-	height: 486px;
+	height: 386px;
 }
 .order_table_head,.order_table_scroll td,th{
   border-collapse: collapse;
@@ -155,7 +155,7 @@ thead.order_table_head,tbody.order_table_scroll{
 	height: 40px;
 	padding: 5px;
 }
-.content_right_bottom input
+.content_right_bottom button
 {
 	float: right;
 	font-size: 30px;

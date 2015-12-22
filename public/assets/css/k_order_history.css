@@ -70,7 +70,7 @@ body
   text-overflow:ellipsis;
   max-width:300px;
 }
-.content input[type="submit"]
+.content button
 {
   font-size: 20px;
 }

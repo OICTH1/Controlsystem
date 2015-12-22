@@ -31,3 +31,9 @@ desktop.ini
 /fuel/app/logs/*/*/*
 /fuel/app/cache/*/*
 /fuel/app/config/crypt.php
+
+# permission
+/fuel/app/logs
+/fuel/app/tmp
+/fuel/app/cache
+/fuel/app/config

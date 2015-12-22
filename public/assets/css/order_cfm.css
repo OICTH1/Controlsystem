@@ -48,7 +48,7 @@ body
 .content
 {
   width: 990px;
-  height: 900px;
+  height: 800px;
   margin: auto;
 }
 .content_top
@@ -110,7 +110,7 @@ tbody.table_scroll {
 .content_bottom
 {
   width: 990px;
-  height: 250px;
+  height: 150px;
   margin: auto;
   float: left;
 }
