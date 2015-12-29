@@ -21,9 +21,9 @@
 					<from>
 						<p><b>商品検索</b></p>
 						<p>
-						<input type="radio" id="pizza" name="category" value="1"><label for="pizza">ピザ</label>
-						<input type="radio" id="drank" name="category" value="2"><label for="drank">ドリンク</label>
-						<input type="radio" id="side" name="category" value="3"><label for="side">サイド</label>
+						<input type="radio"  name="category" value="pizza"><label for="pizza">ピザ</label>
+						<input type="radio"  name="category" value="drink"><label for="drank">ドリンク</label>
+						<input type="radio"  name="category" value="side"><label for="side">サイド</label>
 						</p>
 					</form>
 				</div>
@@ -37,12 +37,15 @@
 							</tr>
 						</thead>
 						<tbody class="view_table_scroll">
-							<tr>
-								<td>ピザ</td>
-							</tr>
-							<tr>
-								<td>ピザ</td>
-							</tr>
+							<?php foreach($item_list as $item){
+									$class = "item ";
+									switch($item['category']){
+										case 'ピザ':$class .= 'pizza '; break;
+										case 'ドリンク':$class .=  'drink '; break;
+										case 'サイド':$class .=  'side '; break;
+									}
+									echo "<tr><td class='$class' id='$item->id'>$item->name</td></tr>";
+							}?>
 						</tbody>
 					</table>
 				</div>
@@ -51,16 +54,21 @@
 		<div class="content_right">
 			<div class="content_right_top">
 				<div class="item_add">
-					<p>商品名&nbsp;
-					<input type="text" name="name" size="30" maxlength="20">
-					<br>フリガナ</p>
+					<p>商品名<span class="slct-item-name"></span>
 					<from>
 						<p>サイズ
-						<input type="checkbox" id="s" name="S" value="1"><label for="s">S</label>
-						<input type="checkbox" id="m" name="M" value="2"><label for="m">M</label>
-						<input type="checkbox" id="l" name="L" value="3"><label for="l">L</label>
+						<input type="radio" id="s" name="size" value="S"><label for="s">S</label>
+						<input type="radio" id="m" name="size" value="M"><label for="m">M</label>
+						<input type="radio" id="l" name="size" value="L"><label for="l">L</label>
 						</p>
-						<input type="button" value="カートに追加">
+						<p>数量
+							<input type="radio" id='num-1' name="num" value="1"><label for="num-1">1</label>
+							<input type="radio" id='num-2' name="num" value="2"><label for="num-2">2</label>
+							<input type="radio" id='num-3' name="num" value="3"><label for="num-3">3</label>
+							<input type="radio" id='num-4' name="num" value="4"><label for="num-4">4</label>
+							<input type="radio" id='num-5' name="num" value="5"><label for="num-5">5</label>
+						</p>
+						<input type="button" value="カートに追加" class="cartin-btn">
 					</form>
 				</div>
 			</div>
@@ -94,5 +102,7 @@
 			</div>
 		</div>
 	</div>
+	<?php echo Asset::js('jquery-1.11.3.min.js')?>
+	<?php echo Asset::js('content/order.js')?>
 </body>
 </html>

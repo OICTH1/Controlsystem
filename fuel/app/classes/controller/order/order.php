@@ -4,7 +4,8 @@ class Controller_Order_Order extends Controller
 {
   public function action_index()
   {
-    return View::forge("order/order");
+    $data['item_list'] = Model_Item::find('all');
+    return View::forge("order/order",$data);
   }
 }
 

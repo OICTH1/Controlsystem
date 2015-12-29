@@ -85,10 +85,13 @@ thead.view_table_head,tbody.view_table_scroll{
 	overflow-y: auto;
 	height: 474px;
 }
-.view_table_head,.view_table_scroll td,th{
+.view_table_head,.view_table_scroll td{
   border-collapse: collapse;
-	text-align: center;
-	width: 478px;
+  width: 478px;
+}
+.view_table_scroll td{
+	padding-left: 30px;
+	box-sizing: border-box;
 }
 .content_right
 {
@@ -159,4 +162,10 @@ thead.order_table_head,tbody.order_table_scroll{
 {
 	float: right;
 	font-size: 30px;
+}
+
+
+/* Class for jQuery*/
+.item-selected{
+	background-color: green;
 }
