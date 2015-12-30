@@ -44,7 +44,7 @@
 										case 'ドリンク':$class .=  'drink '; break;
 										case 'サイド':$class .=  'side '; break;
 									}
-									echo "<tr><td class='$class' id='$item->id'>$item->name</td></tr>";
+									echo "<tr class='$class' id='$item->id'><td>$item->name</td></tr>";
 							}?>
 						</tbody>
 					</table>
@@ -86,7 +86,7 @@
 								</tr>
 							</thead>
 							<tbody class="order_table_scroll">
-								
+
 							</tbody>
 						</table>
 				</div>

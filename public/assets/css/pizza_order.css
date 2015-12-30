@@ -19,3 +19,54 @@ body
 tbody{
 	overflow-y: scroll;
 }
+
+.view_table_scroll{
+	display: block;
+	width: 162px;
+	height:200px;
+	overflow-y: scroll;
+}
+
+.view_table_scroll  tr td{
+	width: 100%;
+
+}
+
+
+
+.order_table tbody,.order_table thead{
+	display: block;
+}
+
+.order_table_scroll{
+	max-height:290px;
+	overflow-y: scroll;
+}
+
+.order_table_head  th:last-child{
+	width: 46px;
+}
+
+.order_table td:not(:nth-child(2)){
+	text-align: center;
+}
+
+.order_table th:nth-child(3),.order_table td:nth-child(3){
+	width: 36px;
+}
+
+.order_table th:nth-child(4),.order_table td:nth-child(4){
+	width: 47px;
+}
+
+#number,.number{
+	width: 25px;
+}
+
+#item_name,.item_name{
+	width: 10em;
+}
+
+.item{
+	cursor: pointer;
+}

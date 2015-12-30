@@ -12,8 +12,6 @@ class Controller_Api_Order extends Controller_Rest
         }
     }
 
-
-
     public function post_item(){
         $order = \Session::get(self::ORDER);
         $order['cart'][] = array(
@@ -44,7 +42,7 @@ class Controller_Api_Order extends Controller_Rest
         \Session::set(self::ORDER,$order);
         return $this->response($order);
     }
-    
+
     public function get_test(){
         \Session::delete(self::ORDER);
         return $this->response(true);

@@ -3,11 +3,7 @@ var api_basepath = 'http://localhost/Controlsystem/public/index.php/api/';
 
 $('input[name=category]:radio').change(function(){
     var select_category = $('input[name=category]:radio:checked').val();
-    var show_item = $('.item:not(.item-hide)');
-    /*show_item.each(function(i,item){
-        console.debug(item);
-        //item.removeClass('item-hide');
-    });*/
+    var show_item = $('.' + select_category);
     show_item.show();
     var hide_item = $('.item:not(.' + select_category  + '):not(.item-hide)');
     hide_item.hide();
