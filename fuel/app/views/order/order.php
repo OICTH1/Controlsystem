@@ -98,6 +98,7 @@
 			</div>
 		</div>
 	</div>
+	<div id="msg"></div>
 	<?php echo Asset::js('jquery-1.11.3.min.js')?>
 	<?php echo Asset::js('content/order.js')?>
 </body>

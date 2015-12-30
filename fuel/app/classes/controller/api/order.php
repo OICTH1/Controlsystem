@@ -17,6 +17,7 @@ class Controller_Api_Order extends Controller_Rest
         $order['cart'][] = array(
             'item_id' => $_POST['item_id'],
             'item_name' => Model_Item::find($_POST['item_id'])->name,
+            'category' => Model_Item::find($_POST['item_id'])->category,
             'order_id' => "",
             'num' => $_POST['num'],
             'size' => $_POST['size']

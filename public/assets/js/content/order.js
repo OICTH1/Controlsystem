@@ -14,10 +14,19 @@ $(function(){
         $('.item-selected').removeClass('item-selected');
         $(this).addClass('item-selected');
         $('.slct-item-name').text($(this).text());
+        if(!$(this).hasClass('pizza')){
+            $('input[name=size]:radio').prop('disabled',true);
+            $('.item_add > p:nth-child(2) > label').css('color','#666');
+        } else {
+            $('input[name=size]:radio').prop('disabled',false);
+            $('.item_add > p:nth-child(2) > label').css('color','#000');
+        }
     });
 
     $('.cartin-btn').click(function(){
-        addItem();
+        if(checkRdio()){
+            addItem();
+        }
     });
 
     $(document).on('click','.cart-delete-btn',function(){
@@ -35,11 +44,38 @@ $(function(){
     });
 });
 
+function checkRdio(){
+    var message = "";
+    if($('.slct-item-name').text() == ""){
+        message += "商品を選択してください";
+    } else {
+        if($(".item-selected").hasClass('pizza') && $('input[name=size]:radio:checked').val() == undefined){
+            message += "\nサイズを選択してください";
+        }
+        if($('input[name=num]:radio:checked').val() == undefined){
+            message += "\n数量を選択してください";
+        }
+    }
+
+    if(message == ""){
+        return true;
+    } else {
+        alert(message);
+        return false;
+    }
+}
+
 function addItem(){
+    var id = $(".item-selected").attr("id");
+    var size = "";
+    if($(".item-selected").hasClass('pizza')){
+        $('input[name=size]:radio:checked').val();
+    }
+    var num = $('input[name=num]:radio:checked').val();
     var data = {
-        item_id : $(".item-selected").attr("id"),
-        size : $('input[name=size]:radio:checked').val(),
-        num : $('input[name=num]:radio:checked').val(),
+        item_id : id,
+        "size" : size,
+        "num" : num
     }
     var url = 'http://localhost/Controlsystem/public/index.php/api/order/item';
     $.post(url,data,function(a){
@@ -84,14 +120,17 @@ function cartUpdate(data){
             }
             numHTML += addStr;
         }
-        var sizeHTML = "<select>";
-        ['S','M','L'].forEach(function(size){
-            var addStr = "<option value=" + size.toLowerCase() + ">" + size + "</option>";
-            if(order['size'] == size){
-                 addStr = "<option value=" + size.toLowerCase() + " selected>" + size + "</option>";
-            }
-            sizeHTML += addStr;
-        });
+        var sizeHTML = " ";
+        if(order['category'] == 'ピザ'){
+            sizeHTML = "<select>";
+            ['S','M','L'].forEach(function(size){
+                var addStr = "<option value=" + size.toLowerCase() + ">" + size + "</option>";
+                if(order['size'] == size){
+                     addStr = "<option value=" + size.toLowerCase() + " selected>" + size + "</option>";
+                }
+                sizeHTML += addStr;
+            });
+        }
 
 
         element.innerHTML = "<td class=\"number\">" + (idx+1) + "</td><td class=\"item_name\">" + order['item_name'] + "</td><td class=\"item_num\">" + numHTML + "</td><td class=\"item_size\">"+ sizeHTML +"</td><td><input type=\"button\" class=\"cart-edit-btn\" value=\"編集\"><br><input type=\"button\" class=\"cart-delete-btn\" value=\"削除\"></td></tr>";
