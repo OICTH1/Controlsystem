@@ -9,6 +9,15 @@ $('input[name=category]:radio').change(function(){
     hide_item.hide();
 });
 
+$(document).on('change','select',function(){
+    var $order_line = $(this).parent().parent();
+    var order_id = $order_line.children('.number').text();
+    var num = $order_line.children('.item_num').children('select').val();
+    var size = $order_line.children('.item_size').children('select').val();
+    console.log(size);
+    editItem(order_id,num,size);
+});
+
 $(function(){
     $('.item').click(function(){
         $('.item-selected').removeClass('item-selected');
@@ -35,13 +44,6 @@ $(function(){
         deleteItem(order_id);
     });
 
-    $(document).on('click','.cart-edit-btn',function(){
-        var $order_line = $(this).parent().parent();
-        var order_id = $order_line.children('.number').text();
-        var num = $order_line.children('.item_num').children('select').val();
-        var size = $order_line.children('.item_size').children('select').val();
-        editItem(order_id,num,size);
-    });
 });
 
 function checkRdio(){
@@ -125,7 +127,7 @@ function cartUpdate(data){
             sizeHTML = "<select>";
             ['S','M','L'].forEach(function(size){
                 var addStr = "<option value=" + size.toLowerCase() + ">" + size + "</option>";
-                if(order['size'] == size){
+                if(order['size'] == size.toLowerCase()){
                      addStr = "<option value=" + size.toLowerCase() + " selected>" + size + "</option>";
                 }
                 sizeHTML += addStr;
@@ -133,7 +135,7 @@ function cartUpdate(data){
         }
 
 
-        element.innerHTML = "<td class=\"number\">" + (idx+1) + "</td><td class=\"item_name\">" + order['item_name'] + "</td><td class=\"item_num\">" + numHTML + "</td><td class=\"item_size\">"+ sizeHTML +"</td><td><input type=\"button\" class=\"cart-edit-btn\" value=\"編集\"><br><input type=\"button\" class=\"cart-delete-btn\" value=\"削除\"></td></tr>";
+        element.innerHTML = "<td class=\"number\">" + (idx+1) + "</td><td class=\"item_name\">" + order['item_name'] + "</td><td class=\"item_num\">" + numHTML + "</td><td class=\"item_size\">"+ sizeHTML +"</td><td><input type=\"button\" class=\"cart-delete-btn\" value=\"削除\"></td></tr>";
         cart.appendChild(element);
     });
 }

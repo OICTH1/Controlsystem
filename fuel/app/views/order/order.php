@@ -57,16 +57,20 @@
 					<p>商品名<span class="slct-item-name"></span>
 					<from>
 						<p>サイズ
-						<input type="radio" id="s" name="size" value="S"><label for="s">S</label>
-						<input type="radio" id="m" name="size" value="M"><label for="m">M</label>
-						<input type="radio" id="l" name="size" value="L"><label for="l">L</label>
+							<span>
+								<input type="radio" id="s" name="size" value="S" checked><label for="s">S</label>
+								<input type="radio" id="m" name="size" value="M"><label for="m">M</label>
+								<input type="radio" id="l" name="size" value="L"><label for="l">L</label>
+							</span>
 						</p>
 						<p>数量
-							<input type="radio" id='num-1' name="num" value="1"><label for="num-1">1</label>
-							<input type="radio" id='num-2' name="num" value="2"><label for="num-2">2</label>
-							<input type="radio" id='num-3' name="num" value="3"><label for="num-3">3</label>
-							<input type="radio" id='num-4' name="num" value="4"><label for="num-4">4</label>
-							<input type="radio" id='num-5' name="num" value="5"><label for="num-5">5</label>
+							<span>
+								<input type="radio" id='num-1' name="num" value="1" checked><label for="num-1">1</label>
+								<input type="radio" id='num-2' name="num" value="2"><label for="num-2">2</label>
+								<input type="radio" id='num-3' name="num" value="3"><label for="num-3">3</label>
+								<input type="radio" id='num-4' name="num" value="4"><label for="num-4">4</label>
+								<input type="radio" id='num-5' name="num" value="5"><label for="num-5">5</label>
+							</span>
 						</p>
 						<input type="button" value="カートに追加" class="cartin-btn">
 					</form>
@@ -82,7 +86,7 @@
 									<th id="item_name">商品名</th>
 									<th>個数</th>
 									<th>サイズ</th>
-									<th>&nbsp;</th>
+									<th>&nbsp;&nbsp;</th>
 								</tr>
 							</thead>
 							<tbody class="order_table_scroll">
