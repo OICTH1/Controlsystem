@@ -29,6 +29,14 @@ $(function(){
         var order_id = $order_line.children('.number').text();
         deleteItem(order_id);
     });
+
+    $(document).on('click','.cart-edit-btn',function(){
+        var $order_line = $(this).parent().parent();
+        var order_id = $order_line.children('.number').text();
+        var num = $order_line.children('.item_num').children('select').val();
+        var size = $order_line.children('.item_size').children('select').val();
+        editItem(order_id,num,size);
+    });
 });
 
 function addItem(){
@@ -38,6 +46,18 @@ function addItem(){
         num : $('input[name=num]:radio:checked').val(),
     }
     var url = 'http://localhost/Controlsystem/public/index.php/api/order/item';
+    $.post(url,data,function(a){
+        cartUpdate(a);
+    },"json");
+}
+
+function editItem(order_id,num,size){
+    var data = {
+        id : order_id,
+        num : num,
+        size : size,
+    }
+    var url = 'http://localhost/Controlsystem/public/index.php/api/order/edit';
     $.post(url,data,function(a){
         cartUpdate(a);
     },"json");
@@ -60,7 +80,25 @@ function cartUpdate(data){
     cart.innerHTML = "";
     data['cart'].forEach(function(order,idx){
         var element = document.createElement('tr');
-        element.innerHTML = "<td class=\"number\">" + (idx+1) + "</td><td class=\"item_name\">" + order['item_name'] + "</td><td class=\"item_num\">" + order['num'] + "</td><td class=\"item_size\">"+ order['size'] +"</td><td><input type=\"button\" class=\"cart-edit-btn\" value=\"編集\"><br><input type=\"button\" class=\"cart-delete-btn\" value=\"削除\"></td></tr>";
+        var numHTML = "<select>";
+        for(var i = 1; i <= 5; i++){
+            var addStr = "<option value=" + i + ">" + i + "</option>"
+            if(order['num'] == i){
+                 addStr = "<option value=" + i + " selected>" + i + "</option>"
+            }
+            numHTML += addStr;
+        }
+        var sizeHTML = "<select>";
+        ['S','M','L'].forEach(function(size){
+            var addStr = "<option value=" + size.toLowerCase() + ">" + size + "</option>";
+            if(order['size'] == size){
+                 addStr = "<option value=" + size.toLowerCase() + " selected>" + size + "</option>";
+            }
+            sizeHTML += addStr;
+        });
+
+
+        element.innerHTML = "<td class=\"number\">" + (idx+1) + "</td><td class=\"item_name\">" + order['item_name'] + "</td><td class=\"item_num\">" + numHTML + "</td><td class=\"item_size\">"+ sizeHTML +"</td><td><input type=\"button\" class=\"cart-edit-btn\" value=\"編集\"><br><input type=\"button\" class=\"cart-delete-btn\" value=\"削除\"></td></tr>";
         cart.appendChild(element);
     });
 }
