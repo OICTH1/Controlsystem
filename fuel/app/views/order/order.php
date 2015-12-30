@@ -30,7 +30,7 @@
 			</div>
 			<div class="content_left_bottom">
 				<div class="item_view">
-					<table border="1"rules="rows">
+					<table border="1">
 						<thead class="view_table_head">
 							<tr>
 								<th class="view">商品名</th>
@@ -75,22 +75,18 @@
 			<div class="content_right_center">
 				<div class="cart">
 					<p>カート</P>
-						<table class="order_table" rules="rows" cellpadding="10">
+						<table class="order_table"  border="1">
 							<thead class="order_table_head">
 								<tr>
 									<th id="number">&nbsp;</th>
 									<th id="item_name">商品名</th>
 									<th>個数</th>
 									<th>サイズ</th>
+									<th>&nbsp;</th>
 								</tr>
 							</thead>
 							<tbody class="order_table_scroll">
-								<tr>
-									<td id="number">1</td>
-									<td id="item_name">ピザ</td>
-									<td>1</td>
-									<td>S</td>
-								</tr>
+								
 							</tbody>
 						</table>
 				</div>

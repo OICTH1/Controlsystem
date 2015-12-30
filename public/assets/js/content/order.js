@@ -23,6 +23,12 @@ $(function(){
     $('.cartin-btn').click(function(){
         addItem();
     });
+
+    $(document).on('click','.cart-delete-btn',function(){
+        var $order_line = $(this).parent().parent();
+        var order_id = $order_line.children('.number').text();
+        deleteItem(order_id);
+    });
 });
 
 function addItem(){
@@ -37,6 +43,16 @@ function addItem(){
     },"json");
 }
 
+function deleteItem(order_id){
+    var data = {
+        id : order_id
+    }
+    var url = 'http://localhost/Controlsystem/public/index.php/api/order/delete';
+    $.post(url,data,function(a){
+        cartUpdate(a);
+    },"json");
+}
+
 function cartUpdate(data){
     console.log(data);
     //var data = JSON.parse(json);
@@ -44,7 +60,7 @@ function cartUpdate(data){
     cart.innerHTML = "";
     data['cart'].forEach(function(order,idx){
         var element = document.createElement('tr');
-        element.innerHTML = "<td class=\"number\">" + (idx+1) + "</td></td><td class=\"item_name\">" + order['item_name'] + "</td><td class=\"item-num\">" + order['num'] + "</td><td class=\"item-size\">"+ order['size'] +"</td></tr>";
+        element.innerHTML = "<td class=\"number\">" + (idx+1) + "</td><td class=\"item_name\">" + order['item_name'] + "</td><td class=\"item_num\">" + order['num'] + "</td><td class=\"item_size\">"+ order['size'] +"</td><td><input type=\"button\" class=\"cart-edit-btn\" value=\"編集\"><br><input type=\"button\" class=\"cart-delete-btn\" value=\"削除\"></td></tr>";
         cart.appendChild(element);
     });
 }

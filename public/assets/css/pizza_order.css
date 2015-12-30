@@ -4,168 +4,18 @@ body
 	height: 900px;
 	margin: 0 auto;
 }
-.header
-{
-  width: 990px;
-  height: 90px;
-  padding: 5px;
-}
-.title
-{
-  font-size: 35px;
-  float: left;
-  margin-left: 20px;
-}
-.back
-{
-  float: right;
-  font-size: 30px;
-  margin-right: 20px;
-}
-.back p
-{
-  padding: 5px;
-  border: 1px solid;
-}
-.content
-{
-	width: 990px;
-	height: 790px;
-	padding: 5px;
-	margin: 0 auto;
-}
-.content_left
-{
-	width: 480px;
-	height: 780px;
-	padding: 5px;
-	clear: both;
+
+.content_left{
 	float: left;
-}
-.content_left_top
-{
-	width: 468px;
-	height: 188px;
-	padding: 5px;
-	border: 1px solid;
-	font-size: 30px;
-}
-.content_left_top input
-{
-	margin-left: 30px;
-}
-.item_search
-{
-	width: 410px;
-	height: 130px;
-	padding:30px;
-}
-.item_search p
-{
-	margin: 0 0 30px 0;
-}
-.content_left_bottom
-{
-	width: 480px;
-	height: 508px;
-	margin-top: 20px;
-	font-size: 30px;
-}
-.view_table table
-{
-  width: 478px;
-  height: 508px;
-  padding: 5px;
-	border: 1px solid;
-}
-thead.view_table_head,tbody.view_table_scroll{
-	display: block;
-}
-.view_table_scroll {
-	overflow-y: auto;
-	height: 474px;
-}
-.view_table_head,.view_table_scroll td{
-  border-collapse: collapse;
-  width: 478px;
-}
-.view_table_scroll td{
-	padding-left: 30px;
-	box-sizing: border-box;
-}
-.content_right
-{
-	width: 480px;
-	height: 780px;
-	padding: 5px;
-	float: left;
-}
-.content_right_top
-{
-	width: 468px;
-	height: 188px;
-	padding: 5px;
-	border: 1px solid;
-	font-size: 30px;
-}
-.item_add
-{
-	padding: 20px;
-}
-.item_add p
-{
-	margin: 0 0 20px 0;
-}
-.item_add input[type="button"]
-{
-	font-size: 20px;
-	float: right;
-	margin-right: 20px;
-}
-.content_right_center
-{
-	width: 478px;
-	height: 508px;
-	margin-top: 20px;
-	border: 1px solid;
-	font-size: 30px;
-}
-.cart p
-{
-	margin: 10px 0 20px 20px;
-}
-.order_table table
-{
-  width: 478px;
-  height: 608px;
-	padding: 5px;
-}
-thead.order_table_head,tbody.order_table_scroll{
-	display: block;
-}
-.order_table_scroll {
-	overflow-y: auto;
-	height: 386px;
-}
-.order_table_head,.order_table_scroll td,th{
-  border-collapse: collapse;
-	text-align: center;
-	width: 478px;
-}
-.content_right_bottom
-{
-	width: 468px;
-	height: 40px;
-	padding: 5px;
-}
-.content_right_bottom button
-{
-	float: right;
-	font-size: 30px;
 }
 
 
-/* Class for jQuery*/
-.item-selected{
-	background-color: green;
+.content_right{
+	float: right;
+}
+
+
+
+tbody{
+	overflow-y: scroll;
 }
