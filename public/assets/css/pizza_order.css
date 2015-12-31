@@ -105,7 +105,7 @@ tbody{
 
 .order_table th:nth-child(5),.order_table td:nth-child(5){
 	font-size: 24px;
-	width: 2em;
+	width: 64px;
 }
 
 .order_table select , .cart-delete-btn{

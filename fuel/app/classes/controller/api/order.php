@@ -12,6 +12,11 @@ class Controller_Api_Order extends Controller_Rest
         }
     }
 
+    public function get_cart(){
+        $order = \Session::get(self::ORDER);
+        return $this->response($order);
+    }
+
     public function post_item(){
         $order = \Session::get(self::ORDER);
         $order['cart'][] = array(

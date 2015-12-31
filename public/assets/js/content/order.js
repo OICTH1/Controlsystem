@@ -14,7 +14,6 @@ $(document).on('change','select',function(){
     var order_id = $order_line.children('.number').text();
     var num = $order_line.children('.item_num').children('select').val();
     var size = $order_line.children('.item_size').children('select').val();
-    console.log(size);
     editItem(order_id,num,size);
 });
 
@@ -43,7 +42,10 @@ $(function(){
         var order_id = $order_line.children('.number').text();
         deleteItem(order_id);
     });
-
+    var url = 'http://localhost/Controlsystem/public/index.php/api/order/cart';
+    $.get(url,function(a){
+        cartUpdate(a);
+    },"json");
 });
 
 function checkRdio(){
@@ -71,7 +73,7 @@ function addItem(){
     var id = $(".item-selected").attr("id");
     var size = "";
     if($(".item-selected").hasClass('pizza')){
-        $('input[name=size]:radio:checked').val();
+        size = $('input[name=size]:radio:checked').val();
     }
     var num = $('input[name=num]:radio:checked').val();
     var data = {
@@ -109,7 +111,6 @@ function deleteItem(order_id){
 
 function cartUpdate(data){
     console.log(data);
-    //var data = JSON.parse(json);
     var cart = document.getElementsByClassName('order_table_scroll')[0];
     cart.innerHTML = "";
     data['cart'].forEach(function(order,idx){

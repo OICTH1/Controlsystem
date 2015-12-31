@@ -58,9 +58,9 @@
 					<from>
 						<p>サイズ
 							<span>
-								<input type="radio" id="s" name="size" value="S" checked><label for="s">S</label>
-								<input type="radio" id="m" name="size" value="M"><label for="m">M</label>
-								<input type="radio" id="l" name="size" value="L"><label for="l">L</label>
+								<input type="radio" id="s" name="size" value="s" checked><label for="s">S</label>
+								<input type="radio" id="m" name="size" value="m"><label for="m">M</label>
+								<input type="radio" id="l" name="size" value="l"><label for="l">L</label>
 							</span>
 						</p>
 						<p>数量

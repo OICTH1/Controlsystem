@@ -54,12 +54,17 @@
             </tr>
           </thead>
           <tbody class="table_scroll">
-            <tr>
-              <td id="item_name">ピザ</td>
-              <td>1</td>
-              <td id="size">S</td>
-              <td id="price">600</td>
-            </tr>
+            <?php if(!empty($orders)):?>
+                <?php foreach($orders as $order):?>
+
+                <tr>
+                  <td id="item_name"><?php echo $order['item_name']?></td>
+                  <td><?php echo $order['num']?></td>
+                  <td id="size"><?php echo $order['size']?></td>
+                  <td id="price"><?php echo $order['price']?></td>
+                </tr>
+                <?php endforeach;?>
+            <?php endif;?>
           </tbody>
         </table>
       </div>
