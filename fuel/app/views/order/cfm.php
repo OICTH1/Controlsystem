@@ -22,27 +22,29 @@
     </div>
     <div class="content">
       <div class="content_top">
+        <?php echo Form::open('index.php/order/cfm/commit')?>
         <table>
           <tr>
             <td id="label"><b>注文日</b></td>
-            <td><input type="textbox" name="name" size="10" maxlength="10" value=<?php echo date( "Y-m-d", time() )?>></td>
+            <td><input type="textbox" name="order_day" size="10" maxlength="10" value=<?php echo date( "Y-m-d", time() )?>></td>
           </tr>
           <tr>
             <td id="label"><b>注文者</b></td>
-            <td><input type="textbox" name="name" size="10" maxlength="10"></td>
+            <td><input type="textbox" name="customer_name" size="10" maxlength="10"></td>
           </tr>
           <tr>
               <td id="label"><b> 郵便番号</b></td>
-              <td><input type="textbox"  size="3" maxlength="3"> <b>-</b>
-                <input type="textbox"  size="4" maxlength="4">
+              <td><input type="textbox"  size="3" maxlength="3" name="postalcode1"> <b>-</b>
+                <input type="textbox"  size="4" maxlength="4" name="postalcode2">
               </td>
             </tr>
             <tr>
               <td id="label"><b> 住所</b></td>
-              <td><input type="textbox"  size="30" maxlength="30">
+              <td><input type="textbox"  size="30" maxlength="30" name="address">
               </td>
             </tr>
           </table>
+
       </div>
       <div class="content_center">
         <table border="2" rules="rows" cellpadding="10">
@@ -74,8 +76,9 @@
         <div class="buttons">
             <div><?php echo Html::anchor('index.php/order/order','再編集') ?></div>
             <div><?php echo Html::anchor('index.php/top','キャンセル') ?></div>
-            <div><?php echo Html::anchor('index.php/top','注文') ?></div>
+            <div><input type="submit" name="submit" value="注文"></div>
         </div>
+        <?php echo Form::close()?>
       </div>
     </div>
   </body>

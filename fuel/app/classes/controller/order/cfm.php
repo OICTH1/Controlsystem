@@ -38,6 +38,37 @@ class Controller_Order_Cfm extends Controller
         }
         return View::forge("order/cfm",$data);
     }
+
+    public function action_commit(){
+        $post = $_POST;
+        // make order
+        $order = new Model_Order();
+        $order->postalcode = $post['postalcode1'] . '-' . $post['postalcode2'];
+        $order->destination = $post['address'];
+        $order->print_flag = false;
+        $order->status = false;
+        $order->order_date = date( "Y-m-d H:i:s", time() );
+        $customer = Model_Member::query()->where('name', $post['customer_name'])->get_one();
+        if(!empty($customer)){
+            $order->member_id = $customer->id;
+        } else {
+            $order->member_id = null;
+        }
+        $order->save();
+        $order_id = $order->id;
+
+        //make orderlines
+        $orders =  \Session::get(self::ORDER);
+        foreach ($orders['cart'] as $key => $value) {
+            $orderline = new Model_Orderline();
+            $orderline->order_id = $order_id;
+            $orderline->item_id = $value['item_id'];
+            $orderline->num = $value['num'];
+            $orderline->size = strtoupper($value['size']);
+            $orderline->save();
+        }
+        return var_dump($order_id);
+    }
 }
 
  ?>
