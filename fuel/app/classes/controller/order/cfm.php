@@ -40,8 +40,11 @@ class Controller_Order_Cfm extends Controller
     }
 
     public function action_commit(){
+        $orders =  \Session::get(self::ORDER);
+        if(count($orders['curt']) == 0){
+            Response::redirect('index.php/order/order');
+        }
         $post = $_POST;
-        // make order
         $order = new Model_Order();
         $order->postalcode = $post['postalcode1'] . '-' . $post['postalcode2'];
         $order->destination = $post['address'];
@@ -67,7 +70,7 @@ class Controller_Order_Cfm extends Controller
             $orderline->size = strtoupper($value['size']);
             $orderline->save();
         }
-        return var_dump($order_id);
+        return View::forge('order/commit');
     }
 }
 
