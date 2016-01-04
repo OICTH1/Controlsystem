@@ -8,7 +8,7 @@ return array(
 		'connection'  => array(
 			'dsn'        => 'mysql:host=localhost;dbname=mtpizza',
 			'username'   => 'root',
-			'password'   => 'oicth1',
+			'password'   => 'yasu0815',
 		),
 	),
 );
