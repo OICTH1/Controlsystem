@@ -8,6 +8,7 @@ class Controller_Order_Cfm extends Controller
     {
         $orders =  \Session::get(self::ORDER);
         $data['orders'] = array();
+        $data['total'] = 0;
         if(!empty($orders['cart'])){
             foreach ($orders['cart'] as $order) {
                 $item = Model_Item::find($order['item_id']);
@@ -26,6 +27,7 @@ class Controller_Order_Cfm extends Controller
                         break;
                 }
                 $price = $unit_price * $order['num'];
+                $data['total'] += $price;
                 $data['orders'][] = array(
                     'item_name' => $order['item_name'],
                     'num' => $order['num'],

@@ -18,6 +18,12 @@ $(document).on('change','select',function(){
 });
 
 $(function(){
+
+    var url = 'http://localhost/Controlsystem/public/index.php/api/order/cart';
+    $.get(url,function(a){
+        cartUpdate(a);
+    },"json");
+
     $('.item').click(function(){
         $('.item-selected').removeClass('item-selected');
         $(this).addClass('item-selected');
@@ -42,10 +48,7 @@ $(function(){
         var order_id = $order_line.children('.number').text();
         deleteItem(order_id);
     });
-    var url = 'http://localhost/Controlsystem/public/index.php/api/order/cart';
-    $.get(url,function(a){
-        cartUpdate(a);
-    },"json");
+
 });
 
 function checkRdio(){
@@ -110,7 +113,7 @@ function deleteItem(order_id){
 }
 
 function cartUpdate(data){
-    console.log(data);
+    //console.log(data);
     var cart = document.getElementsByClassName('order_table_scroll')[0];
     cart.innerHTML = "";
     data['cart'].forEach(function(order,idx){

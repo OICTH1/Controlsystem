@@ -8,23 +8,24 @@
   <body>
     <div class="header">
       <div class="title">
-        <p>注文確認</p>
+        <div>注文確認</div>
       </div>
       <div class="return">
         <div class="top">
-          <p><?php echo Html::anchor('index.php/top','トップに戻る') ?></p>
+          <div><?php echo Html::anchor('index.php/top','トップに戻る') ?></div>
         </div>
         <div class="back">
-          <p><?php echo Html::anchor('index.php/order/order','戻る') ?></p>
+          <div><?php echo Html::anchor('index.php/order/order','戻る') ?></div>
         </div>
       </div>
+      <div style="clear:both">
     </div>
     <div class="content">
       <div class="content_top">
         <table>
           <tr>
             <td id="label"><b>注文日</b></td>
-            <td><input type="textbox" name="name" size="10" maxlength="10"></td>
+            <td><input type="textbox" name="name" size="10" maxlength="10" value=<?php echo date( "Y-m-d", time() )?>></td>
           </tr>
           <tr>
             <td id="label"><b>注文者</b></td>
@@ -67,14 +68,14 @@
             <?php endif;?>
           </tbody>
         </table>
+        <div class="total"><div>合計金額<span><?php echo '¥' . $total?></span></div><div style="clear:both"></div></div>
       </div>
       <div class="content_bottom">
-        <div class="total"></div><br>
-        <p>
-          <input type="button" name="name" value="再編集">
-          <input type="button" name="name" value="キャンセル">
-          <input type="button" name="name" value="注文">
-        </p>
+        <div class="buttons">
+            <div><?php echo Html::anchor('index.php/order/order','再編集') ?></div>
+            <div><?php echo Html::anchor('index.php/top','キャンセル') ?></div>
+            <div><?php echo Html::anchor('index.php/top','注文') ?></div>
+        </div>
       </div>
     </div>
   </body>
