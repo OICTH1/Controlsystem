@@ -6,7 +6,7 @@
       $search = $_POST['key'];
       $data = array('key' => $search);
 
-      $condtions['where'] = array(array('name','LIKE','$search'));
+      $condtions['where'] = array(array('name','LIKE',$search));
 
       $result = Model_Member::find('all',$condtions);
       return $result;
