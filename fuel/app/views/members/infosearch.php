@@ -19,6 +19,7 @@
               success: function( res )
               {
                 console.log(res);
+                $('#m_result').find("tr:gt(0)").remove();
                 var template = document.querySelector('#member');
 
                   Object.keys(res).forEach(function(key){
@@ -29,10 +30,14 @@
                     cells[2].textContent = res[key].address;
                     template.parentNode.appendChild(clone);
                   });
+              },
+              error: function(res)
+              {
+                $('#member').find("tr:gt(0)").remove();
               }
             })
       });
-      
+
       $('.history').click(function(){
                 var a = $("table#m-result td#m_name").text();
                 alert(a);
@@ -79,7 +84,7 @@
       </div>
       <div class="content_bottom">
         <div class="result">
-          <table id="m-result" rules="rows" cellpadding="10">
+          <table id="m_result" rules="rows" cellpadding="10">
             <thead class="table_head">
               <tr>
                 <th>氏名</th>
