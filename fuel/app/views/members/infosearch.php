@@ -28,6 +28,7 @@
                     cells[0].textContent = res[key].name;
                     cells[1].textContent = res[key].tel;
                     cells[2].textContent = res[key].address;
+                    cells[3].innerHTML = "<a href=/control-system/public/index.php/members/history/index/"+res[key].id+">注文履歴</a>";
                     template.parentNode.appendChild(clone);
                   });
               },
@@ -38,10 +39,36 @@
             })
       });
 
-      $('.history').click(function(){
-                var a = $("table#m-result td#m_name").text();
-                alert(a);
-              });
+      /*d$(document).on('click','#m_view',function(){
+        var data = [];
+        var tr = $("table#m_result tr");
+        for( var i = 0, l = tr.length;i < l;i++){
+          var cells = tr.eq(i).children();
+          for(var j = 0,m=cells.length;j<m;j++){
+            if(typeof data[i] == "undefined"){
+              data[i] = [];
+            }
+            data[i][j] = cells.eq(j).text();
+          }
+        }
+          var a = $("tr").index(this);
+          var member_name = {name: data[a-4][0]};
+          console.log(member_name);
+          $.ajax({
+                  type: "POST",
+                  url: "msearch/history.json",
+                  dataType : 'json',
+                  data: member_name,
+                  success: function(res)
+                  {
+                    alert(res);
+                  },
+                  error: function(res)
+                  {
+                    console.log(res);
+                  }
+          });
+      });*/
     });
     </script>
   </head>
@@ -84,6 +111,7 @@
       </div>
       <div class="content_bottom">
         <div class="result">
+          <!--<?php echo Form::Open(array('action' => 'index.php/members/history', 'method' => 'post')); ?>-->
           <table id="m_result" rules="rows" cellpadding="10">
             <thead class="table_head">
               <tr>
@@ -95,19 +123,18 @@
             </thead>
             <tbody class="table_scroll">
               <template id="member">
-              <tr>
+              <tr id="m_view">
     						<td id="m_name"></td>
     						<td></td>
     						<td></td>
-    						<td>
-                  <!--<?php echo Form::Open(array('action' => 'index.php/members/history', 'method' => 'post')); ?>-->
-                  <?php echo Form::submit('history','注文履歴',array('class'=>'history')); ?>
-                  <!--<?php echo Form::Close();?> -->
+    						<td id="historylink">
+
                 </td>
     					</tr>
             </templaste>
             </tbody>
           </table>
+          <!--<?php echo Form::Close();?>-->
         </div>
       </div>
     </div>

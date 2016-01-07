@@ -205,12 +205,23 @@
                                                   ),
                                                 ));
             }
+            else
+            {
+                $result = Model_Member::find('all');
+            }
           }
         }
+
       }
 
       return $result;
     }
+    public function post_history()
+    {
+      $name = $_POST['name'];
+
+      return $name;
+    }
   }
 
- ?>
+?>

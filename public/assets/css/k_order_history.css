@@ -58,17 +58,19 @@ body
 .content table
 {
   border-collapse: collapse;
+  width: 900x;
+  padding: 5px 45px;
 }
 .content td
 {
-  width: 300px;
+  width: 400px;
+  padding: 10px;
   border: 1px solid;
   text-align: center;
   font-size: 20px;
   white-space:nowrap;
   overflow:hidden;
   text-overflow:ellipsis;
-  max-width:300px;
 }
 .content button
 {
