@@ -41,7 +41,7 @@ class Controller_Order_Cfm extends Controller
 
     public function action_commit(){
         $orders =  \Session::get(self::ORDER);
-        if(count($orders['curt']) == 0){
+        if(count($orders['cart']) == 0){
             Response::redirect('index.php/order/order');
         }
         $post = $_POST;
@@ -50,7 +50,8 @@ class Controller_Order_Cfm extends Controller
         $order->destination = $post['address'];
         $order->print_flag = false;
         $order->status = false;
-        $order->order_date = date( "Y-m-d H:i:s", time() );
+        $date = date( "Y-m-d", time() );
+        $order->order_date = $date;
         $customer = Model_Member::query()->where('name', $post['customer_name'])->get_one();
         if(!empty($customer)){
             $order->member_id = $customer->id;
@@ -62,13 +63,52 @@ class Controller_Order_Cfm extends Controller
 
         //make orderlines
         $orders =  \Session::get(self::ORDER);
-        foreach ($orders['cart'] as $key => $value) {
-            $orderline = new Model_Orderline();
-            $orderline->order_id = $order_id;
-            $orderline->item_id = $value['item_id'];
-            $orderline->num = $value['num'];
-            $orderline->size = strtoupper($value['size']);
-            $orderline->save();
+        foreach ($orders['cart'] as $orderline) {
+            $item_id = $orderline['item_id'];
+            $num = $orderline['num'];
+            $size = strtoupper($orderline['size']);
+            $neworderline = new Model_Orderline();
+            $neworderline->order_id = $order->id;
+            $neworderline->item_id = $item_id;
+            $neworderline->num = $num;
+            $neworderline->size = $size;
+            $neworderline->save();
+
+            $earning = new Model_Earning();
+            if(!empty($customer)){
+                $earning->member_id = $customer->id;
+            } else {
+                $earning->member_id = null;
+            }
+            $earning->item_id = $item_id;
+            $earning->size = $size;
+            switch ($size) {
+                case 'S':
+                    $unit_price = $neworderline->item->unit_price_s;
+                    break;
+                case 'M':
+                    $unit_price = $neworderline->item->unit_price_m;
+                    break;
+                case 'L':
+                    $unit_price = $neworderline->item->unit_price_m;
+                    break;
+                default:
+                    $unit_price = $neworderline->item->unit_price;
+                    break;
+            }
+            $earning->unit_price = $unit_price;
+            $earning->num = $num;
+            $earning->date = $date;
+            $now = date('Ymd');
+            if(!empty($customer)){
+                $birthday = date('Ymd',strtotime($customer->birthday));
+                $earning->age = (int)floor(($now-$birthday)/10000);
+            } else {
+                $birthday = null;
+                $earning->age = 0;
+            }
+            $earning->save();
+
         }
         return View::forge('order/commit');
     }

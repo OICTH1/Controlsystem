@@ -14,6 +14,6 @@ class Model_Earning extends \Orm\Model
 	);
 
 
-	protected static $_table_name = 'tbl_earning';
+	protected static $_table_name = 'tbl_earnings';
 
 }

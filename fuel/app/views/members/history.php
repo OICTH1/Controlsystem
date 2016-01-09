@@ -21,7 +21,6 @@
         </div>
       </div>
       <div class="k_name">
-        ａ
       </div>
       <table>
         <tr>
@@ -30,17 +29,17 @@
           <td>&nbsp</td>
         </tr>
         <div class="history">
-            <p>
-              <tr>
-                <td id="time">2015/11/17</td>
-                <td id="item_name">ピザ、ピザ、ピザ、ピザ、ピザ、ピザ、ピザ</td>
-                <td>
-                  <?php echo Form::Open('index.php/members/detail'); ?>
-                  <?php echo Form::Button('button','詳細'); ?>
-                  <?php echo Form::Close();?>
-                </td>
-              </tr>
-            </p>
+          <template>
+            <tr>
+              <td id="time"></td>
+              <td id="item_name"></td>
+              <td>
+                <?php echo Form::Open('index.php/members/detail'); ?>
+                <?php echo Form::Button('button','詳細'); ?>
+                <?php echo Form::Close();?>
+              </td>
+            </tr>
+          </template>
         </div>
       </table>
     </div>
