@@ -9,7 +9,7 @@
     <div class="content">
       <div class="header">
         <div class="title">
-          <p>注文確認</p>
+          <p>注文履歴一覧</p>
         </div>
         <div class="return">
           <div class="top">
@@ -21,25 +21,22 @@
         </div>
       </div>
       <div class="k_name">
+        <p>会員名: <?php echo $member->name ?></p>
       </div>
       <table>
         <tr>
           <td>注文日</td>
-          <td>商品一覧</td>
-          <td>&nbsp</td>
+          <td></td>
         </tr>
         <div class="history">
-          <template>
+          <?php foreach($orders as $order): ?>
             <tr>
-              <td id="time"></td>
-              <td id="item_name"></td>
+              <td id="time"><?php echo substr($order->order_date, 0,11) ?></td>
               <td>
-                <?php echo Form::Open('index.php/members/detail'); ?>
-                <?php echo Form::Button('button','詳細'); ?>
-                <?php echo Form::Close();?>
+                <?php echo Html::anchor('index.php/members/history/detail/'.$order->id,'詳細') ?>
               </td>
             </tr>
-          </template>
+          <?php endforeach;?>
         </div>
       </table>
     </div>

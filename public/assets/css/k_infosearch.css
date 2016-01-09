@@ -101,7 +101,11 @@ tbody.table_scroll {
 	width: 245px;
   font-size: 30px;
 }
-
 button {
   font-size: 80%;
+}
+#historylink
+{
+  font-size: 30px;
+  text-align: center;
 }
