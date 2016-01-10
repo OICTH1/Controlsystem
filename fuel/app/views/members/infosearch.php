@@ -5,40 +5,43 @@
     <?php echo Asset::css("k_infosearch.css"); ?>
     <?php echo Asset::js("jquery-1.11.3.min.js"); ?>
     <?php echo Asset::js("jquery.qrcode.min.js"); ?>
-    <title>会員情報検索</title>
+    <title>会員検索</title>
     <script type="text/javascript">
     $(function() {
-
-    $('.submit').click(function(){
-      $.ajax({
-              type: "POST",
-              url: "msearch/msearch.json",
-              dataType : 'json',
-              data:"name="+$("#form_name").val() + "&postalcode="+$("#form_postalcode").val()
-                    + "&tel="+$("#form_tel").val() + "&mailaddress="+$("#form_mailaddress").val(),
-              success: function( res )
-              {
-                console.log(res);
-                $('#m_result').find("tr:gt(0)").remove();
-                var template = document.querySelector('#member');
-
-                  Object.keys(res).forEach(function(key){
-                    var clone = template.content.cloneNode(true);
-                    var cells = clone.querySelectorAll('td');
-                    cells[0].textContent = res[key].name;
-                    cells[1].textContent = res[key].tel;
-                    cells[2].textContent = res[key].address;
-                    cells[3].innerHTML = "<a href=/control-system/public/index.php/members/history/index/"+res[key].id+">注文履歴</a>";
-                    template.parentNode.appendChild(clone);
-                  });
-              },
-              error: function(res)
-              {
-                $('#member').find("tr:gt(0)").remove();
-              }
-            })
-      });
+        updateMembers();
+        $('.submit').click(function(){
+            updateMembers();
+        });
     });
+    function updateMembers(){
+        $.ajax({
+                type: "POST",
+                url: "msearch/msearch.json",
+                dataType : 'json',
+                data:"name="+$("#form_name").val() + "&postalcode="+$("#form_postalcode").val()
+                      + "&tel="+$("#form_tel").val() + "&mailaddress="+$("#form_mailaddress").val(),
+                success: function( res )
+                {
+                  console.log(res);
+                  $('#m_result').find("tr:gt(0)").remove();
+                  var template = document.querySelector('#member');
+
+                    Object.keys(res).forEach(function(key){
+                      var clone = template.content.cloneNode(true);
+                      var cells = clone.querySelectorAll('td');
+                      cells[0].textContent = res[key].name;
+                      cells[1].textContent = res[key].tel;
+                      cells[2].textContent = res[key].address;
+                      cells[3].innerHTML = "<a href=/Controlsystem/public/index.php/members/history/index/"+res[key].id+">注文履歴</a>";
+                      template.parentNode.appendChild(clone);
+                    });
+                },
+                error: function(res)
+                {
+                  $('#member').find("tr:gt(0)").remove();
+                }
+            });
+    }
     </script>
   </head>
   <body>

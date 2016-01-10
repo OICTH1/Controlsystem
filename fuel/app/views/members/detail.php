@@ -73,6 +73,5 @@
         </tr>
       </table>
     </div>
-    <?php echo var_dump($details);?>
     </body>
 </html>
