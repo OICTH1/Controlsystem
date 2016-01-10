@@ -11,6 +11,8 @@ class Model_Earning extends \Orm\Model
 		'num',
 		'date',
 		'age',
+		'category',
+		'item_name',
 	);
 
 

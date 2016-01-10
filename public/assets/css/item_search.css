@@ -10,6 +10,29 @@ body
   margin: auto;
   padding: 10px 5px;
 }
+.header
+{
+  width: 990px;
+  height: 90px;
+  padding: 5px;
+}
+.title
+{
+  font-size: 35px;
+  float: left;
+  margin-left: 20px;
+}
+.back
+{
+  float: right;
+  font-size: 30px;
+  margin-right: 20px;
+}
+.back p
+{
+  padding: 5px;
+  border: 1px solid;
+}
 .content
 {
 <<<<<<< HEAD

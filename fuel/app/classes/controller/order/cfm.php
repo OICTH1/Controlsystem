@@ -65,6 +65,7 @@ class Controller_Order_Cfm extends Controller
         $orders =  \Session::get(self::ORDER);
         foreach ($orders['cart'] as $orderline) {
             $item_id = $orderline['item_id'];
+            $item = Model_Item::find($item_id);
             $num = $orderline['num'];
             $size = strtoupper($orderline['size']);
             $neworderline = new Model_Orderline();
@@ -99,6 +100,8 @@ class Controller_Order_Cfm extends Controller
             $earning->unit_price = $unit_price;
             $earning->num = $num;
             $earning->date = $date;
+            $earning->category = $item->category;
+            $earning->item_name = $item->name;
             $now = date('Ymd');
             if(!empty($customer)){
                 $birthday = date('Ymd',strtotime($customer->birthday));

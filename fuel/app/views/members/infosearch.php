@@ -38,37 +38,6 @@
               }
             })
       });
-
-      /*d$(document).on('click','#m_view',function(){
-        var data = [];
-        var tr = $("table#m_result tr");
-        for( var i = 0, l = tr.length;i < l;i++){
-          var cells = tr.eq(i).children();
-          for(var j = 0,m=cells.length;j<m;j++){
-            if(typeof data[i] == "undefined"){
-              data[i] = [];
-            }
-            data[i][j] = cells.eq(j).text();
-          }
-        }
-          var a = $("tr").index(this);
-          var member_name = {name: data[a-4][0]};
-          console.log(member_name);
-          $.ajax({
-                  type: "POST",
-                  url: "msearch/history.json",
-                  dataType : 'json',
-                  data: member_name,
-                  success: function(res)
-                  {
-                    alert(res);
-                  },
-                  error: function(res)
-                  {
-                    console.log(res);
-                  }
-          });
-      });*/
     });
     </script>
   </head>
