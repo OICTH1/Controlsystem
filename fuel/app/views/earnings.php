@@ -22,12 +22,12 @@
           console.log(data);
           $.ajax({
                   type: "POST",
-                  url: "msearch/msearch.json",
+                  url: "search/search.json",
                   dataType : 'json',
                   data: data,
                   success: function( res )
                   {
-
+                    console.log(res);
                   }
           });
         });
