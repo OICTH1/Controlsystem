@@ -47,7 +47,7 @@
   <body>
     <div class="header">
       <div class="title">
-        <p>会員情報検索</p>
+        <p>会員検索</p>
       </div>
       <div class="back">
         <p><?php echo Html::anchor('index.php/top','戻る') ?></p>
