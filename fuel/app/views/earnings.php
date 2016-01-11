@@ -8,6 +8,10 @@
     <script type="text/javascript">
       $(function(){
         $('.submit').click(function(){
+          updateEarnings();
+        });
+      });
+      function updateEarnings(){
           var categorys = [];
           $("#category:checked").map(function(){
                 categorys.push($(this).parent('label').text());
@@ -22,11 +26,22 @@
           }
           //console.debug(data);
           $.post("search/search.json",data,function(res){
-                    console.log(res);
-          });
+            console.log(res);
+            $('#earningsresult').find("tr:gt(0)").remove();
+            var template = document.querySelector('#earnings');
 
-        });
-      });
+              Object.keys(res).forEach(function(key){
+                var clone = template.content.cloneNode(true);
+                var cells = clone.querySelectorAll('td');
+                cells[0].textContent = res[key].age;
+                cells[1].textContent = res[key].item_name;
+                cells[2].textContent = res[key].size;
+                cells[3].textContent = res[key].num;
+                cells[4].textContent = res[key].unit_price * res[key].num;
+                template.parentNode.appendChild(clone);
+              });
+          });
+      }
     </script>
   </head>
   <body>
@@ -68,24 +83,24 @@
       </div>
       <div class="content_bottom">
         <div class="result">
-          <table id="earnings_result" rules="rows" cellpadding="10">
+          <table id="earningsresult" rules="rows" cellpadding="10">
             <thead class="table_head">
               <tr>
-                <th>日付</th>
+                <th id="day">日付</th>
                 <th>商品名</th>
-                <th>サイズ</th>
-                <th>個数</th>
-                <th>金額</th>
+                <th id="size">サイズ</th>
+                <th id="num">個数</th>
+                <th id="total">金額</th>
               </tr>
             </thead>
             <tbody class="table_scroll">
-              <template>
-              <tr id="earnings">
+              <template id="earnings">
+              <tr>
+    						<td id="day"></td>
     						<td></td>
-    						<td></td>
-    						<td></td>
-    						<td></td>
-                <td><td>
+    						<td id="size"></td>
+    						<td id="num"></td>
+                <td id="total"></td>
     					</tr>
             </templaste>
             </tbody>

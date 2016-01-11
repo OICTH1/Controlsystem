@@ -129,6 +129,14 @@ tbody.table_scroll {
 .result td,th{
   border-collapse: collapse;
 	text-align: center;
-	width: 245px;
+	width: 400px;
   font-size: 30px;
+}
+#day
+{
+  width: 200px;
+}
+#size,#num,#total
+{
+  width: 119px;
 }

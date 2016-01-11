@@ -23,7 +23,7 @@ class Controller_Earnings_Search extends Fuel\Core\Controller_Rest
           $where[] = array(array('category','in',$in));
       }
       if(!empty($_POST['item_name'])){
-          $where[] = array(array('item_name',$_POST['item_name']));
+          $where[] = array(array('item_name','like',"%".$_POST['item_name']."%"));
       }
 
       //return $_POST;
