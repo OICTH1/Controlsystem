@@ -8,7 +8,7 @@
 <body>
 	<div class="header">
 		<div class="title">
-			<p>ピザ注文</p>
+			<p>注文登録</p>
 		</div>
 		<div class="back">
 			<p><?php echo Html::anchor('index.php/top','戻る') ?></p>
