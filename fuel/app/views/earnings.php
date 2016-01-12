@@ -33,7 +33,7 @@
               Object.keys(res).forEach(function(key){
                 var clone = template.content.cloneNode(true);
                 var cells = clone.querySelectorAll('td');
-                cells[0].textContent = res[key].age;
+                cells[0].textContent = res[key].date;
                 cells[1].textContent = res[key].item_name;
                 cells[2].textContent = res[key].size;
                 cells[3].textContent = res[key].num;
