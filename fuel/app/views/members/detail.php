@@ -16,7 +16,7 @@
             <p><?php echo Html::anchor('index.php/top','トップに戻る') ?></p>
           </div>
           <div class="back">
-            <p><?php echo Html::anchor('index.php/members/history/index/'.$orders->id,'戻る') ?></p>
+            <p><?php echo Html::anchor('index.php/members/history/index/'.$member->id,'戻る') ?></p>
           </div>
         </div>
       </div>
