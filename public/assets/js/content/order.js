@@ -1,5 +1,5 @@
 
-var api_basepath = 'http://localhost/Controlsystem/public/index.php/api/';
+var url = 'api/order/cart';
 
 $('input[name=category]:radio').change(function(){
     var select_category = $('input[name=category]:radio:checked').val();
@@ -18,9 +18,8 @@ $(document).on('change','select',function(){
 });
 
 $(function(){
-
-    var url = 'http://localhost/Controlsystem/public/index.php/api/order/cart';
-    $.get(url,function(a){
+    var url = 'api/order/cart';
+    $.get(baseurl + url,function(a){
         cartUpdate(a);
     },"json");
 
@@ -84,8 +83,8 @@ function addItem(){
         "size" : size,
         "num" : num
     }
-    var url = 'http://localhost/Controlsystem/public/index.php/api/order/item';
-    $.post(url,data,function(a){
+    var url = 'api/order/item';
+    $.post(baseurl + url,data,function(a){
         cartUpdate(a);
     },"json");
 }
@@ -96,8 +95,8 @@ function editItem(order_id,num,size){
         num : num,
         size : size,
     }
-    var url = 'http://localhost/Controlsystem/public/index.php/api/order/edit';
-    $.post(url,data,function(a){
+    var url = 'api/order/edit';
+    $.post(baseurl + url,data,function(a){
         cartUpdate(a);
     },"json");
 }
@@ -106,8 +105,8 @@ function deleteItem(order_id){
     var data = {
         id : order_id
     }
-    var url = 'http://localhost/Controlsystem/public/index.php/api/order/delete';
-    $.post(url,data,function(a){
+    var url = 'api/order/delete';
+    $.post(baseurl + url,data,function(a){
         cartUpdate(a);
     },"json");
 }

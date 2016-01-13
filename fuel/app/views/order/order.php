@@ -104,6 +104,9 @@
 	</div>
 	<div id="msg"></div>
 	<?php echo Asset::js('jquery-1.11.3.min.js')?>
+	<script type="text/javascript">
+		var baseurl = <?php echo "\"http://$_SERVER[SERVER_ADDR]/Controlsystem/public/index.php/\"" ?>;
+	</script>
 	<?php echo Asset::js('content/order.js')?>
 </body>
 </html>
