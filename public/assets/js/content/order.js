@@ -83,7 +83,7 @@ function addItem(){
         "size" : size,
         "num" : num
     }
-    var url = 'api/order/item';
+    var url = 'api/order/add';
     $.post(baseurl + url,data,function(a){
         cartUpdate(a);
     },"json");

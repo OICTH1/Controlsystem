@@ -1,3 +1,4 @@
+
 body
 {
   width: 1000px;
@@ -5,6 +6,11 @@ body
   margin: auto;
   padding: 5px;
 }
+
+input{
+    font-size: 40px;
+}
+
 .content
 {
   width: 990px;
