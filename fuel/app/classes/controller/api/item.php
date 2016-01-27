@@ -38,23 +38,27 @@ class Controller_Api_Item extends Controller_Rest
             if($category == 'ピザ'){
                     $result[] = array(
                         'id' => $item->id,
-                        'name' => $item->name . '(S)',
+                        'name' => $item->name,
+                        'size' => 'S',
                         'place' => $item->unit_price_s,
                     );
                     $result[] = array(
                         'id' => $item->id,
-                        'name' => $item->name . '(M)',
+                        'name' => $item->name,
+                        'size' => 'M',
                         'place' => $item->unit_price_m,
                     );
                     $result[] = array(
                         'id' => $item->id,
-                        'name' => $item->name . '(L)',
+                        'name' => $item->name,
+                        'size' => 'L',
                         'place' => $item->unit_price_l,
                     );
             } else {
                 $result[] = array(
                     'id' => $item->id,
                     'name' => $item->name,
+                    'size' => '',
                     'place' => $item->unit_price,
                 );
             }
