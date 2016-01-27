@@ -29,14 +29,37 @@ class Controller_Api_Item extends Controller_Rest
             'w' => array('わ','を','ん'),
         );
         $row_initials = $row_table[$vowel];
-        $query = Model_Item::query()->select('id','name')->where('category','=',$category)->and_where_open();
+        $query = Model_Item::query()->where('category','=',$category)->and_where_open();
         foreach ($row_initials as $initial) {
             $query = $query->or_where('name','like',$initial . '%')->or_where('name','like',mb_convert_kana($initial,'C') . '%');
         }
         $itemlist = $query->and_where_close()->order_by('name','asc')->get();
         foreach ($itemlist as $item) {
-            $risult[] = $item;
+            if($category == 'ピザ'){
+                    $result[] = array(
+                        'id' => $item->id,
+                        'name' => $item->name . '(S)',
+                        'place' => $item->unit_price_s,
+                    );
+                    $result[] = array(
+                        'id' => $item->id,
+                        'name' => $item->name . '(M)',
+                        'place' => $item->unit_price_m,
+                    );
+                    $result[] = array(
+                        'id' => $item->id,
+                        'name' => $item->name . '(L)',
+                        'place' => $item->unit_price_l,
+                    );
+            } else {
+                $result[] = array(
+                    'id' => $item->id,
+                    'name' => $item->name,
+                    'place' => $item->unit_price,
+                );
+            }
+
         }
-        return $risult;
+        return $result;
     }
 }
