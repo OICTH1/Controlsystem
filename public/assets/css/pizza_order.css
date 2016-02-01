@@ -84,8 +84,18 @@ tbody{
 width: 1000px;
 }
 
+.item_title{
+	display: none;
+}
+
+.item_title_label{
+	border: solid 1px;
+	padding: 6px;
+}
+
 .content_bottom_left{
 float: left;
+background-color: rgb(105, 104, 150);
 }
 
 .indexlist{
@@ -96,8 +106,38 @@ float: left;
 	font-size: 27px;
 }
 
+.checked{
+	background-color: rgb(102,222,222);
+}
+
 .content_bottom_center{
 	float: left;
+	border: solid 1px;
+}
+
+.viewlist{
+	overflow: scroll;
+	width: 600px;
+	height: 400px;
+}
+
+.viewlistrow{
+	display: flex;
+}
+
+.viewitem{
+	border: solid 1px;
+	margin: 8px;
+	padding: 4px;
+	flex: 1;
+	height: 6ex;
+}
+
+.viewitem_n{
+	margin: 8px;
+	padding: 4px;
+	flex: 1;
+	height: 6ex;
 }
 
 .content_bottom_right{
@@ -115,12 +155,20 @@ float: left;
 	border: solid 1px;
 }
 
+.numboxrow{
+	display: flex;
+}
+
 .numbutton{
+	flex: 1;
 	border: solid 1px;
-	float: left;
 	margin: 10px;
-	padding: 2px 18px;
+	padding: 2px 18.5px;
 	font-size: 26px;
+}
+
+#delete,#decision,#0{
+	padding: 2px 14px;
 }
 
 .order_table tbody,.order_table thead{

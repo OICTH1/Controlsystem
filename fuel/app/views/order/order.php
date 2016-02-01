@@ -48,12 +48,14 @@
 			</div>
 		</div>
 		<div class="content_center">
-			<div class="item_title">ピザ
-			</div>
-			<div class="item_title">サイド
-			</div>
-			<div class="item_title">ドリンク
-			</div>
+			<form class="item_title_form">
+				<label class="item_title_label"><input type="radio" name="c" value="pizza" class="item_title" checked="checked">ピザ
+				</label>
+				<label class="item_title_label"><input type="radio" name="c" value="side" class="item_title">サイド
+				</label>
+				<label class="item_title_label"><input type="radio" name="c" value="drink" class="item_title">ドリンク
+				</label>
+			</form>
 			<div style="clear :both;"></div>
 		</div>
 		<div class="content_bottom">
@@ -71,20 +73,24 @@
 
 			</div>
 			<div class="content_bottom_center">
-					<table border="1">
-						<tbody class="view_table_scroll">
-							<?php foreach($item_list as $item){
-									$class = "item ";
-									switch($item['category']){
-										case 'ピザ':$class .= 'pizza '; break;
-										case 'ドリンク':$class .=  'drink '; break;
-										case 'サイド':$class .=  'side '; break;
+				<div class="viewlist">
+					 <?php /* $i = 0; foreach($item_list as $item) :?>
+						<?php	if($i % 3 == 0){echo '<div class="viewlistrow">';}?>
+							<div class="viewitem" id="<?php echo $item['id']?>">
+								<?php echo $item['name']?><br>
+							</div>
+							<?php if($i % 3 == 2){echo '</div>';}?>
+							<?php $i++;endforeach; ?>
+							<?php $j = $i % 3;
+								if($j != 0 ){
+									for ($k=0; $k < 3-$j; $k++) {
+										echo '<div class="listitem noneitem"></div>';
 									}
-									echo "<tr class='$class' id='$item->id'><td>$item->name</td></tr>";
-							}?>
-						</tbody>
-					</table>
+									echo '</div>';
+								}
+							*/ ?>
 			</div>
+		</div>
 			<div class="content_bottom_right">
 				<div class="content_bottom_right_top">
 					<div class="numbox">
@@ -98,13 +104,13 @@
 							<div class="numbutton" id='5'>5</div>
 							<div class="numbutton" id='6'>6</div>
 						</div>
-						<div class="numboxeow">
+						<div class="numboxrow">
 							<div class="numbutton" id='1'>1</div>
 							<div class="numbutton" id='2'>2</div>
 							<div class="numbutton" id='3'>3</div>
 						</div>
-						<div class="numbox">
-							<div class="numbutton" id='Delete'>消</div>
+						<div class="numboxrow">
+							<div class="numbutton" id='delete'>消</div>
 							<div class="numbutton" id='0'>0</div>
 							<div class="numbutton" id='decision'>決</div>
 						</div>
