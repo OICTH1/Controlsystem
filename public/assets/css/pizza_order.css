@@ -106,6 +106,10 @@ background-color: rgb(105, 104, 150);
 	font-size: 27px;
 }
 
+.indexlist_item{
+	display: none;
+}
+
 .checked{
 	background-color: rgb(102,222,222);
 }

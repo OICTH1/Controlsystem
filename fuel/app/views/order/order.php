@@ -60,37 +60,23 @@
 		</div>
 		<div class="content_bottom">
 			<div class="content_bottom_left">
-				<a class="indexlist" id='a'>あ</a></br>
-				<a class="indexlist" id='k'>か</a></br>
-				<a class="indexlist" id='s'>さ</a></br>
-				<a class="indexlist" id='t'>た</a></br>
-				<a class="indexlist" id='n'>な</a></br>
-				<a class="indexlist" id='h'>は</a></br>
-				<a class="indexlist" id='m'>ま</a></br>
-				<a class="indexlist" id='y'>や</a></br>
-				<a class="indexlist" id='r'>ら</a></br>
-				<a class="indexlist" id='w'>わ</a>
-
+				<form class="indexlist_form">
+				<label class="indexlist" id='a'><input type="radio" name="index" value="a" class="indexlist_item" checked="checked">あ</label><br>
+				<label class="indexlist" id='k'><input type="radio" name="index" value="k" class="indexlist_item">か</label><br>
+				<label class="indexlist" id='s'><input type="radio" name="index" value="s" class="indexlist_item">さ</label><br>
+				<label class="indexlist" id='t'><input type="radio" name="index" value="t" class="indexlist_item">た</label><br>
+				<label class="indexlist" id='n'><input type="radio" name="index" value="n" class="indexlist_item">な</label><br>
+				<label class="indexlist" id='h'><input type="radio" name="index" value="h" class="indexlist_item">は</label><br>
+				<label class="indexlist" id='m'><input type="radio" name="index" value="m" class="indexlist_item">ま</label><br>
+				<label class="indexlist" id='y'><input type="radio" name="index" value="y" class="indexlist_item">や</label><br>
+				<label class="indexlist" id='r'><input type="radio" name="index" value="r" class="indexlist_item">ら</label><br>
+				<label class="indexlist" id='w'><input type="radio" name="index" value="w" class="indexlist_item">わ</label><br>
+			</form>
 			</div>
 			<div class="content_bottom_center">
 				<div class="viewlist">
-					 <?php /* $i = 0; foreach($item_list as $item) :?>
-						<?php	if($i % 3 == 0){echo '<div class="viewlistrow">';}?>
-							<div class="viewitem" id="<?php echo $item['id']?>">
-								<?php echo $item['name']?><br>
-							</div>
-							<?php if($i % 3 == 2){echo '</div>';}?>
-							<?php $i++;endforeach; ?>
-							<?php $j = $i % 3;
-								if($j != 0 ){
-									for ($k=0; $k < 3-$j; $k++) {
-										echo '<div class="listitem noneitem"></div>';
-									}
-									echo '</div>';
-								}
-							*/ ?>
+				</div>
 			</div>
-		</div>
 			<div class="content_bottom_right">
 				<div class="content_bottom_right_top">
 					<div class="numbox">
@@ -110,17 +96,21 @@
 							<div class="numbutton" id='3'>3</div>
 						</div>
 						<div class="numboxrow">
-							<div class="numbutton" id='delete'>消</div>
+							<div class="numbutton" id='delete'> </div>
 							<div class="numbutton" id='0'>0</div>
-							<div class="numbutton" id='decision'>決</div>
+							<div class="numbutton" id='decision'> </div>
 						</div>
 						<div style="clear:both;"></div>
 					</div>
 				</div>
 				<div class="content_bottom_right_bottom">
-					<div class="allclear">
+					<div class="cartin-btn">
+						カートに追加
 					</div>
 					<div class="commit">
+						<?php echo Form::Open('index.php/order/cfm'); ?>
+						<?php echo Form::Button('button','確認'); ?>
+						<?php echo Form::Close();?>
 					</div>
 				</div>
 			</div>
