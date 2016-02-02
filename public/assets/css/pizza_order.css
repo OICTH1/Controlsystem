@@ -6,32 +6,29 @@ body
 	font-size: 24px;
 }
 
-.content_left,.content_right{
-	border: solid 1px;
-	padding: 30px;
-	height: 620px;
-	box-sizing: border-box;
+.header{
+
 }
 
-.content_left{
+.title{
 	float: left;
+	width: 500px;
 }
 
-.content_left_top,.content_left_buttom,.content_right_top,.content_right_center{
-	/*border: solid 1px;*/
+.back{
+	float: left;
+	width: 500px;
+	text-align: right;
 }
 
-.content_left_top{
-	margin-bottom: 20px;
+.content_top,.content_bottom{
+	width: 1000px;
 }
 
-.content_right{
-	float: right;
-}
-
-.item_add p{
+.content_top_top{
 
 }
+
 
 
 tbody{
@@ -41,7 +38,7 @@ tbody{
 .view_table_scroll{
 	display: block;
 	width: 240px;
-	height:400px;
+	height:300px;
 	overflow-y: scroll;
 }
 
@@ -72,40 +69,163 @@ tbody{
 	left: 6em;
 }
 
+.content_center{
+	width: 100%;
+}
+
+.item_title{
+	float: left;
+	width: 150px;
+	text-align: center;
+	border: solid 1px;
+}
+
+.content_bottom{
+width: 1000px;
+}
+
+.item_title{
+	display: none;
+}
+
+.item_title_label{
+	border: solid 1px;
+	padding: 6px;
+}
+
+.content_bottom_left{
+float: left;
+background-color: rgb(105, 104, 150);
+}
+
+.indexlist{
+	border: solid 1px;
+	margin: 6px;
+	margin-top: 5px;
+	padding: 4px;
+	font-size: 27px;
+}
+
+.checked{
+	background-color: rgb(102,222,222);
+}
+
+.content_bottom_center{
+	float: left;
+	border: solid 1px;
+}
+
+.viewlist{
+	overflow: scroll;
+	width: 600px;
+	height: 400px;
+}
+
+.viewlistrow{
+	display: flex;
+}
+
+.viewitem{
+	border: solid 1px;
+	margin: 8px;
+	padding: 4px;
+	flex: 1;
+	height: 6ex;
+}
+
+.viewitem_n{
+	margin: 8px;
+	padding: 4px;
+	flex: 1;
+	height: 6ex;
+}
+
+.content_bottom_right{
+max-width: 500px;
+float: left;
+}
+
+.content_bottom_right_top{
+
+}
+
+.numbox{
+	max-width: 300px;
+	padding: auto;
+	border: solid 1px;
+}
+
+.numboxrow{
+	display: flex;
+}
+
+.numbutton{
+	flex: 1;
+	border: solid 1px;
+	margin: 10px;
+	padding: 2px 18.5px;
+	font-size: 26px;
+}
+
+#delete,#decision,#0{
+	padding: 2px 14px;
+}
+
 .order_table tbody,.order_table thead{
 	display: block;
 }
 
 .order_table_scroll{
-	max-height:202px;
+	height: 200px;
+
 	overflow-y: scroll;
 }
-
-
 
 .order_table td:not(:nth-child(2)){
 	text-align: center;
 }
 
 .order_table th:nth-child(1),.order_table td:nth-child(1){
-	width: 1em;
+	font-size: 24px;
+	width: 200px;
 }
 
 .order_table th:nth-child(2),.order_table td:nth-child(2){
-	width: 10em;
+	font-size: 24px;
+	width: 200px;
 }
 
 .order_table th:nth-child(3),.order_table td:nth-child(3){
-	width: 3em;
+	font-size: 24px;
+	width: 200px;
 }
 
 .order_table th:nth-child(4),.order_table td:nth-child(4){
-	width: 4em;
+	font-size: 24px;
+	width: 200px;
 }
 
 .order_table th:nth-child(5),.order_table td:nth-child(5){
 	font-size: 24px;
-	width: 64px;
+	width: 200px;
+}
+
+.content_top_bottom{
+	margin-left: 600px;
+}
+
+.sum_table{
+
+}
+
+.sum_table th:nth-child(1),.sum_table td:nth-child(1){
+	font-size: 24px;
+	width: 200px;
+}
+
+.sum_table th:nth-child(2),.sum_table td:nth-child(2){
+	font-size: 24px;
+	width: 200px;
 }
 
 .order_table select , .cart-delete-btn{

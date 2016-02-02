@@ -57,7 +57,7 @@
       <div class="content_top">
         <!-- 検索条件 -->
         <div class="search">
-          <p>検索条件</p>
+          <p><h2>検索条件</h2></p>
           <?php Form::open(array('action' => '', 'method' => 'post')); ?>
             <table>
               <tr>
@@ -79,6 +79,8 @@
             </table>
             <p><?php echo Form::submit('search', '検索', array('class'=>'submit')); ?></p>
           <?php Form::Close(); ?>
+          </div>
+          <div style="clear:both">
         </div>
       </div>
       <div class="content_bottom">
