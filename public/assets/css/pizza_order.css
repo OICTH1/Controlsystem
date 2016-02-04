@@ -180,9 +180,12 @@ float: left;
 }
 
 .order_table_scroll{
-	height: 200px;
+	height: 210px;
+	overflow-y: hidden;
+}
 
-	overflow-y: scroll;
+.order_table_scroll >tr> td {
+	height: 36px;
 }
 
 .order_table td:not(:nth-child(2)){
@@ -191,27 +194,27 @@ float: left;
 
 .order_table th:nth-child(1),.order_table td:nth-child(1){
 	font-size: 24px;
-	width: 200px;
+	width: 50px;
 }
 
 .order_table th:nth-child(2),.order_table td:nth-child(2){
 	font-size: 24px;
-	width: 200px;
+	width: 600px;
 }
 
 .order_table th:nth-child(3),.order_table td:nth-child(3){
 	font-size: 24px;
-	width: 200px;
+	width: 100px;
 }
 
 .order_table th:nth-child(4),.order_table td:nth-child(4){
 	font-size: 24px;
-	width: 200px;
+	width: 100px;
 }
 
 .order_table th:nth-child(5),.order_table td:nth-child(5){
 	font-size: 24px;
-	width: 200px;
+	width: 150px;
 }
 
 .content_top_bottom{

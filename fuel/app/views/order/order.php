@@ -29,19 +29,50 @@
 							</tr>
 						</thead>
 						<tbody class="order_table_scroll">
+							<tr class="tr0">
+								<td class="number"></td>
+								<td class="item_name"></td>
+								<td class="num"></td>
+								<td class="unit_price"></td>
+								<td class="sum_price"></td>
+							</tr>
+							<tr class="tr1">
+								<td class="number"></td>
+								<td class="item_name"></td>
+								<td class="num"></td>
+								<td class="unit_price"></td>
+								<td class="sum_price"></td>
+							</tr>
+							<tr class="tr2">
+								<td class="number"></td>
+								<td class="item_name"></td>
+								<td class="num"></td>
+								<td class="unit_price"></td>
+								<td class="sum_price"></td>
+							</tr>
+							<tr class="tr3">
+								<td class="number"></td>
+								<td class="item_name"></td>
+								<td class="num"></td>
+								<td class="unit_price"></td>
+								<td class="sum_price"></td>
+							</tr>
+							<tr class="tr4">
+								<td class="number"></td>
+								<td class="item_name"></td>
+								<td class="num"></td>
+								<td class="unit_price"></td>
+								<td class="sum_price"></td>
+							</tr>
 						</tbody>
 					</table>
 			</div>
 			<div class="content_top_bottom">
 					<table class="sum_table" border="1">
 						<tbody class="sum_table_body">
-							<tr>
-								<th>数量</th>
-								<td></td>
-							</tr>
-							<tr>
+							<tr class="sumpricetr">
 								<th>合計金額</th>
-								<td></td>
+								<td class="sumpricetd"></td>
 							</tr>
 						</tbody>
 					</table>
