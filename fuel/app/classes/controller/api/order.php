@@ -39,7 +39,7 @@ class Controller_Api_Order extends Controller_Rest
                 break;
         }
         foreach ($order['cart'] as $key => $value) {
-            if($value['id'] == $id && $value['size'] == $size ){
+            if($value['item_id'] == $id && $value['size'] == $size ){
                 if($num == 0){
                     unset($order['cart'][$key]);
                 } else {
@@ -51,7 +51,7 @@ class Controller_Api_Order extends Controller_Rest
         }
         if($num != 0){
             $order['cart'][] = array(
-                'id' => $id,
+                'item_id' => $id,
                 'item_name' => $item->name,
                 'category' => $item->category,
                 'order_id' => "",
