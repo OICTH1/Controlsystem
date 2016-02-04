@@ -23,20 +23,21 @@ class Controller_Api_Order extends Controller_Rest
         $item = Model_Item::find($_POST['id']);
         $num = $_POST['num'];
         $size = strtoupper($_POST['size']);
-
-        switch ($size) {
-            case 'S':
-                $price_key = 'unit_price_s';
-                break;
-            case 'M':
-                $price_key = 'unit_price_m';
-                break;
-            case 'L':
-                $price_key = 'unit_price_l';
-                break;
-            default:
-                $price_key = 'unit_price';
-                break;
+        if($item->category != 'ピザ'){
+            $price_key = 'unit_price';
+            $size = "";
+        } else {
+            switch ($size) {
+                case 'S':
+                    $price_key = 'unit_price_s';
+                    break;
+                case 'M':
+                    $price_key = 'unit_price_m';
+                    break;
+                case 'L':
+                    $price_key = 'unit_price_l';
+                    break;
+            }
         }
         foreach ($order['cart'] as $key => $value) {
             if($value['item_id'] == $id && $value['size'] == $size ){
