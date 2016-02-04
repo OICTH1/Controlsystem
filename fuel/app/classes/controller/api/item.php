@@ -34,6 +34,7 @@ class Controller_Api_Item extends Controller_Rest
             $query = $query->or_where('name','like',$initial . '%')->or_where('name','like',mb_convert_kana($initial,'C') . '%');
         }
         $itemlist = $query->and_where_close()->order_by('name','asc')->get();
+        $result = array();
         foreach ($itemlist as $item) {
             if($category == 'ピザ'){
                     $result[] = array(

@@ -19,14 +19,47 @@ class Controller_Api_Order extends Controller_Rest
 
     public function post_add(){
         $order = \Session::get(self::ORDER);
-        $order['cart'][] = array(
-            'item_id' => $_POST['item_id'],
-            'item_name' => Model_Item::find($_POST['item_id'])->name,
-            'category' => Model_Item::find($_POST['item_id'])->category,
-            'order_id' => "",
-            'num' => $_POST['num'],
-            'size' => $_POST['size']
-        );
+        $id =  $_POST['id'];
+        $item = Model_Item::find($_POST['id']);
+        $num = $_POST['num'];
+        $size = strtoupper($_POST['size']);
+
+        switch ($size) {
+            case 'S':
+                $price_key = 'unit_price_s';
+                break;
+            case 'M':
+                $price_key = 'unit_price_m';
+                break;
+            case 'L':
+                $price_key = 'unit_price_l';
+                break;
+            default:
+                $price_key = 'unit_price';
+                break;
+        }
+        foreach ($order['cart'] as $key => $value) {
+            if($value['item_id'] == $id && $value['size'] == $size ){
+                if($num == 0){
+                    unset($order['cart'][$key]);
+                } else {
+                    $order['cart'][$key]['num'] = $num;
+                }
+                \Session::set(self::ORDER,$order);
+                return $this->response($order);
+            }
+        }
+        if($num != 0){
+            $order['cart'][] = array(
+                'item_id' => $id,
+                'item_name' => $item->name,
+                'category' => $item->category,
+                'order_id' => "",
+                'num' => $num,
+                'size' => $size,
+                'unit_price' => $item[$price_key]
+            );
+        }
         \Session::set(self::ORDER,$order);
         return $this->response($order);
     }

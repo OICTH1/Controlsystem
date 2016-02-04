@@ -32,7 +32,7 @@
           <td>金額</td>
         </tr>
         <div class="history">
-
+          <table>
           <?php
           $total = 0;
           foreach($details as $detail):
