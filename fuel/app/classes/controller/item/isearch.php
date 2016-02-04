@@ -17,6 +17,8 @@ class Controller_Item_Isearch extends \Fuel\Core\Controller_Rest
                                   ));
     }
 
+    $result = Model_Item::find('all');
+
     return $result;
   }
 }
