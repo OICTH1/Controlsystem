@@ -12,21 +12,7 @@ class Controller_Order_Cfm extends Controller
         if(!empty($orders['cart'])){
             foreach ($orders['cart'] as $order) {
                 $item = Model_Item::find($order['item_id']);
-                switch ($order['size']) {
-                    case 's':
-                        $unit_price = $item->unit_price_s;
-                        break;
-                    case 'm':
-                        $unit_price = $item->unit_price_m;
-                        break;
-                    case 'l':
-                        $unit_price = $item->unit_price_l;
-                        break;
-                    default:
-                        $unit_price = $item->unit_price;
-                        break;
-                }
-                $price = $unit_price * $order['num'];
+                $price = $data['price'] * $order['num'];
                 $data['total'] += $price;
                 $data['orders'][] = array(
                     'item_name' => $order['item_name'],
