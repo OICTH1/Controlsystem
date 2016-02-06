@@ -66,13 +66,25 @@
 							</tr>
 						</tbody>
 					</table>
+				<div class="content_top_right">
+					<div class="upscroll">
+					</div>
+					<div class="downscroll">
+				</div>
+				</div>
 			</div>
 			<div class="content_top_bottom">
 					<table class="sum_table" border="1">
 						<tbody class="sum_table_body">
 							<tr class="sumpricetr">
+								<th>選択商品</th>
+								<td class="selectitem"></td>
 								<th>合計金額</th>
 								<td class="sumpricetd"></td>
+							</tr>
+							<tr>
+								<th>選択個数</th>
+								<td class="selectnum"></td>
 							</tr>
 						</tbody>
 					</table>
@@ -127,17 +139,14 @@
 							<div class="numbutton" id='3'>3</div>
 						</div>
 						<div class="numboxrow">
-							<div class="numbutton" id='delete'> </div>
+							<div class="numbutton" id='delete'>削除</div>
 							<div class="numbutton" id='0'>0</div>
-							<div class="numbutton" id='decision'> </div>
+							<div class="numbutton" id='decision'>追加</div>
 						</div>
 						<div style="clear:both;"></div>
 					</div>
 				</div>
 				<div class="content_bottom_right_bottom">
-					<div class="cartin-btn">
-						カートに追加
-					</div>
 					<div class="commit">
 						<?php echo Form::Open('index.php/order/cfm'); ?>
 						<?php echo Form::Button('button','確認'); ?>

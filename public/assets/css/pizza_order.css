@@ -25,8 +25,8 @@ body
 	width: 1000px;
 }
 
-.content_top_top{
-
+.content_top_bottom{
+ margin-left: 230px;
 }
 
 
@@ -34,6 +34,76 @@ body
 tbody{
 	overflow-y: scroll;
 }
+
+
+.order_table tbody,.order_table thead{
+	display: block;
+}
+
+.order_table_scroll{
+	height: 210px;
+	overflow-y: hidden;
+}
+
+.order_table_scroll >tr> td {
+	height: 36px;
+}
+
+.order_table td:not(:nth-child(2)).order_table th:nth-child(1),.order_table td:nth-child(1){
+	font-size: 24px;
+	width: 50px;
+}
+
+.order_table th:nth-child(2),.order_table td:nth-child(2){
+	font-size: 24px;
+	width: 600px;
+}
+
+.order_table th:nth-child(3),.order_table td:nth-child(3){
+	font-size: 24px;
+	width: 100px;
+}
+
+.order_table th:nth-child(4),.order_table td:nth-child(4){
+	font-size: 24px;
+	text-align: right;
+	width: 100px;
+}
+
+.order_table th:nth-child(5),.order_table td:nth-child(5){
+	font-size: 24px;
+	width: 150px;
+}
+
+
+.sum_table{
+
+}
+
+.sum_table th:nth-child(1),.sum_table td:nth-child(1){
+	font-size: 24px;
+	width: 100px;
+}
+
+.sum_table th:nth-child(2),.sum_table td:nth-child(2){
+	font-size: 24px;
+	width: 400px;
+}
+
+.sum_table th:nth-child(3),.sum_table td:nth-child(3){
+	font-size: 24px;
+	width: 100px;
+}
+
+.sum_table th:nth-child(4),.sum_table td:nth-child(4){
+	font-size: 24px;
+	width: 150px;
+}
+
+.order_table select , .cart-delete-btn{
+	font-size: 24px;
+}
+
 
 .view_table_scroll{
 	display: block;
@@ -166,6 +236,7 @@ float: left;
 .numbutton{
 	flex: 1;
 	border: solid 1px;
+	text-align: center;
 	margin: 10px;
 	padding: 2px 18.5px;
 	font-size: 26px;
@@ -175,66 +246,9 @@ float: left;
 	padding: 2px 14px;
 }
 
-.order_table tbody,.order_table thead{
-	display: block;
-}
-
-.order_table_scroll{
-	height: 210px;
-	overflow-y: hidden;
-}
-
-.order_table_scroll >tr> td {
-	height: 36px;
-}
-
-.order_table td:not(:nth-child(2)){
-	text-align: center;
-}
-
-.order_table th:nth-child(1),.order_table td:nth-child(1){
-	font-size: 24px;
-	width: 50px;
-}
-
-.order_table th:nth-child(2),.order_table td:nth-child(2){
-	font-size: 24px;
-	width: 600px;
-}
-
-.order_table th:nth-child(3),.order_table td:nth-child(3){
-	font-size: 24px;
-	width: 100px;
-}
-
-.order_table th:nth-child(4),.order_table td:nth-child(4){
-	font-size: 24px;
-	width: 100px;
-}
-
-.order_table th:nth-child(5),.order_table td:nth-child(5){
-	font-size: 24px;
-	width: 150px;
-}
-
-.content_top_bottom{
-	margin-left: 600px;
-}
-
-.sum_table{
-
-}
-
-.sum_table th:nth-child(1),.sum_table td:nth-child(1){
-	font-size: 24px;
-	width: 200px;
-}
-
-.sum_table th:nth-child(2),.sum_table td:nth-child(2){
-	font-size: 24px;
-	width: 200px;
-}
-
-.order_table select , .cart-delete-btn{
+.commit>form>button{
+	margin: 6px;
+	height: 60px;
+	width: 80px;
 	font-size: 24px;
 }

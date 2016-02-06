@@ -46,6 +46,7 @@ class Controller_Api_Order extends Controller_Rest
                 } else {
                     $order['cart'][$key]['num'] = $num;
                 }
+                $order['cart'] = array_values($order['cart']);
                 \Session::set(self::ORDER,$order);
                 return $this->response($order);
             }
