@@ -193,7 +193,6 @@ background-color: rgb(105, 104, 150);
 .indexlist{
 	border: solid 1px;
 	margin: 6px;
-	margin-top: 5px;
 	padding: 4px;
 	font-size: 27px;
 }
@@ -241,8 +240,8 @@ max-width: 500px;
 float: left;
 }
 
-.content_bottom_right_top{
-
+.select{
+	background-color: rgb(20,222,100);
 }
 
 .numbox{
@@ -260,12 +259,12 @@ float: left;
 	border: solid 1px;
 	text-align: center;
 	margin: 10px;
-	padding: 2px 18.5px;
+	padding: 6px 18.5px;
 	font-size: 26px;
 }
 
 #delete,#decision,#0{
-	padding: 2px 14px;
+
 }
 
 .commit>form>button{

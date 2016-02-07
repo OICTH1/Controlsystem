@@ -85,30 +85,30 @@ function cartUpdata(data){
   sumdata =0;
   sum = 0;
   cartdata = data;
-  //alert(data["cart"].length);
+  alert(data["cart"].length);
 if(k<5){
   for(i=0;i<5;i++){
     if(data["cart"][i] == undefined){
-    $(".tr"+j).children(".number").html("");
-    $(".tr"+j).children(".item_name").html("");
-    $(".tr"+j).children(".num").html("");
-    $(".tr"+j).children(".unit_price").html("");
-    $(".tr"+j).children(".sum_price").html("");
-    $(".selectitem").html("");
-    $(".selectnum").html("");
-  }else{
+      $(".tr"+i).children(".number").html("");
+      $(".tr"+i).children(".item_name").html("");
+      $(".tr"+i).children(".num").html("");
+      $(".tr"+i).children(".unit_price").html("");
+      $(".tr"+i).children(".sum_price").html("");
+      $(".selectitem").html("");
+      $(".selectnum").html("");
+    }else{
     //alert(data["cart"][i].unit_price +":"+ data["cart"][i].num);
       sum = +data["cart"][i].unit_price * +data["cart"][i].num;
       $(".tr"+i).children(".number").html(i+1);
       if(data["cart"][i].size == ""){
-      $(".tr"+i).children(".item_name").html(data["cart"][i].item_name);
-    }else{
-      $(".tr"+i).children(".item_name").html(data["cart"][i].item_name + "("+ data["cart"][i].size+")");
-    }
+        $(".tr"+i).children(".item_name").html(data["cart"][i].item_name);
+      }else{
+        $(".tr"+i).children(".item_name").html(data["cart"][i].item_name + "("+ data["cart"][i].size+")");
+      }
       $(".tr"+i).children(".num").html(data["cart"][i].num);
       $(".tr"+i).children(".unit_price").html(data["cart"][i].unit_price);
       $(".tr"+i).children(".sum_price").html(sum);
-  }
+    }
   }
 }else{
   for(i=k;i>=l;i--){
