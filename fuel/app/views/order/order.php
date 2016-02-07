@@ -18,6 +18,7 @@
 	<div class="content">
 		<div class="content_top">
 			<div class="content_top_top">
+				<div class="content_top_left">
 					<table class="order_table"  border="1">
 						<thead class="order_table_head">
 							<tr>
@@ -66,13 +67,15 @@
 							</tr>
 						</tbody>
 					</table>
+				</div>
 				<div class="content_top_right">
-					<div class="upscroll">
+					<div id="-1" class="upscroll scroll">
 					</div>
-					<div class="downscroll">
+					<div id="1" class="downscroll scroll">
 				</div>
 				</div>
 			</div>
+			<div style="clear :both;"></div>
 			<div class="content_top_bottom">
 					<table class="sum_table" border="1">
 						<tbody class="sum_table_body">

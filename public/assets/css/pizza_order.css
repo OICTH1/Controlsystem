@@ -25,16 +25,17 @@ body
 	width: 1000px;
 }
 
-.content_top_bottom{
- margin-left: 230px;
+.content_top_top{
+float: left;
 }
-
-
 
 tbody{
 	overflow-y: scroll;
 }
 
+.content_top_left{
+	float: left;
+}
 
 .order_table tbody,.order_table thead{
 	display: block;
@@ -49,14 +50,14 @@ tbody{
 	height: 36px;
 }
 
-.order_table td:not(:nth-child(2)).order_table th:nth-child(1),.order_table td:nth-child(1){
+.order_table th:nth-child(1),.order_table td:nth-child(1){
 	font-size: 24px;
 	width: 50px;
 }
 
 .order_table th:nth-child(2),.order_table td:nth-child(2){
 	font-size: 24px;
-	width: 600px;
+	width: 528px;
 }
 
 .order_table th:nth-child(3),.order_table td:nth-child(3){
@@ -66,7 +67,6 @@ tbody{
 
 .order_table th:nth-child(4),.order_table td:nth-child(4){
 	font-size: 24px;
-	text-align: right;
 	width: 100px;
 }
 
@@ -75,9 +75,31 @@ tbody{
 	width: 150px;
 }
 
+.content_top_right{
+	float: left;
+	border: solid 1px;
+}
 
-.sum_table{
+.upscroll{
+  position: relative;
+  width:0;
+  height:0;
+  border: 16px solid transparent;
+  border-bottom-color: #999;
+	margin-bottom: 194px;
+}
 
+.downscroll{
+  position: relative;
+  width: 0;
+  height: 0;
+  border: 16px solid transparent;
+  border-top-color: #999;
+}
+
+
+.content_top_bottom{
+ margin-left: 188px;
 }
 
 .sum_table th:nth-child(1),.sum_table td:nth-child(1){
