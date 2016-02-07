@@ -142,6 +142,8 @@ if(k<5){
     //alert(sumdata);
     });
   $(".sumpricetd").html(sumdata);
+  $(".selectitem").html("");
+  $(".selectnum").html("");
 }
 
 $(".scroll").click(function(){
